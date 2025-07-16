@@ -3,14 +3,17 @@
 #include <opencv2/highgui.hpp>
 #include <iostream>
 #include<ctime>
+#include <string>
 using namespace std;
 using namespace cv;
 
 
 int main()
 {
-    cv::Mat img = cv::imread("D:\\University\\Semester 3\\Data Structure\\Assignments\\Assignment 1\\Material\\Original Images\\IMD091.bmp");
-    cv::Mat img2 = cv::imread("D:\\University\\Semester 3\\Data Structure\\Assignments\\Assignment 1\\Material\\Ground Truths\\IMD091_lesion.bmp");
+    const std::string RAW_IMAGE_PATH = "data/raw/IMD091.bmp"; // Set your image filename here
+    const std::string GROUND_TRUTH_PATH = "data/ground_truth/IMD091_lesion.bmp"; // Set your mask filename here
+    cv::Mat img = cv::imread(RAW_IMAGE_PATH);
+    cv::Mat img2 = cv::imread(GROUND_TRUTH_PATH);
     namedWindow("First OpenCV Application", WINDOW_AUTOSIZE);
     cv::imshow("First OpenCV Application", img);
     cv::moveWindow("First OpenCV Application", 0, 45);

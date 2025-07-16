@@ -3,6 +3,7 @@
 #include <opencv2/highgui.hpp>
 #include <iostream>
 #include<ctime>
+#include <string>
 using namespace std;
 using namespace cv;
 
@@ -58,10 +59,11 @@ void insertfirst(node*& haha, int value)
 
 //////////////////////////////////////////////////////////////////////////
 
+const std::string SEGMENTED_IMAGE_PATH = "data/segmented/mIMD002.bmp"; // Set your image filename here
 
 int main()
 {
-    cv::Mat img = cv::imread("D:\\University\\Semester 3\\Data Structure\\Assignments\\Assignment 1\\Material\\Segmented Outputs\\mIMD002.bmp");
+    cv::Mat img = cv::imread(SEGMENTED_IMAGE_PATH);
     namedWindow("First OpenCV Application", WINDOW_AUTOSIZE);
     cv::imshow("First OpenCV Application", img);
     cv::moveWindow("First OpenCV Application", 0, 45);
